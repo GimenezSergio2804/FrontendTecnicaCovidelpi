@@ -1,0 +1,91 @@
+<div class="container-fluid">
+    <section class="row">
+        <div class="col ml-4 mr-4">
+          <div class="border-bottom pt-5 mb-5">
+            <h1 class="mb-3 pt-2">Abonados</h1>
+            <div class="d-flex flex-wrap flex-md-nowrap justify-content-between">
+              <p class="text-muted">Este módulo crea los Abonados del Sistema.</p>
+              
+            </div>
+          </div>
+  
+          
+          <form #updateForm="ngForm" (ngSubmit)="actualizar(updateForm)" >
+            <div class="card box-shadow-sm">
+                <div class="card-header">
+                    <h5 style="margin-bottom: 0px;">Registro de Abonado</h5>
+                </div>
+                <div class="card-body">
+                      <div class="row">
+                        <div class="col-lg-12">
+                            <div class="row">
+                              <div class="col-lg-4 form-group">	
+                                  <label for="">Numero De Persona</label>
+                                  <input type="number" class="form-control" name="numero_de_persona" [(ngModel)]="persona.numero_de_persona" placeholder="numero de caja" required>
+                              </div>
+                              <div class="col-lg-4 form-group">	
+                                  <label for="">Nombres</label>
+                                  <input type="text" class="form-control" name="nombres" [(ngModel)]="persona.nombres" placeholder="Precio" required>
+                              </div>
+                              <div class="col-lg-4 form-group">	
+                                <label for="">Apellidos</label>
+                                <input type="text" class="form-control" name="apellidos" [(ngModel)]="persona.apellidos" placeholder="Precio" required>
+                            </div>
+                            <div class="col-lg-4 form-group">	
+                              <label for="">DNI</label>
+                              <input type="nunmber" class="form-control" name="dni" [(ngModel)]="persona.dni" placeholder="Precio" required>
+                          </div>
+                            <div class="col-lg-4 form-group">	
+                                <label for="">Coordenadas</label>
+                                <input name="coordenadas" [(ngModel)]="persona.coordenadas" type="text" class="form-control" placeholder="Coordenadas">
+                            </div>
+                            <div class="col-lg-4 form-group">	
+                                <label for="">Calle</label>
+                                <select name="calle" [(ngModel)]="persona.calle" class="form-control custom-select" id="select-input">
+                                  <option value="" selected disabled>Seleccionar</option>
+                                  <option *ngFor="let item of calles" value="{{item.nombre}}">{{item.nombre}}</option>
+
+                                </select>
+                            </div>
+                            <div class="col-lg-4 form-group">	
+                              <label for="">Numero Calle</label>
+                              <input name="numero_calle" [(ngModel)]="persona.numero_calle" type="text" class="form-control" placeholder="Coordenadas">
+                          </div>
+                            <div class="col-lg-4 form-group">	
+                                <label for="">Entrecalle 1</label>
+                                <select name="entrecalle1" [(ngModel)]="persona.entrecalle1" class="form-control custom-select" id="select-input">
+                                  <option value="" selected disabled>Seleccionar</option>
+                                  <option *ngFor="let item of calles" value="{{item.nombre}}">{{item.nombre}}</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-4 form-group">	
+                                <label for="">Entrecalle 2</label>
+                                <select name="entrecalle2" [(ngModel)]="persona.entrecalle2" class="form-control custom-select" id="select-input">
+                                  <option value="" selected disabled>Seleccionar</option>
+                                  <option *ngFor="let item of calles" value="{{item.nombre}}">{{item.nombre}}</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-4 form-group">	
+                              <label for="">Contacto</label>
+                              <input name="contacto" [(ngModel)]="persona.contacto" type="text" class="form-control" placeholder="Coordenadas">
+                          </div>
+                          <div class="col-lg-4 form-group">	
+                            <label for="">Email</label>
+                            <input type="email" class="form-control" name="email" [(ngModel)]="persona.email" placeholder="numero de caja" required>
+                        </div>
+  
+  
+                            </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-primary mr-2" type="submit">Crear Abonado</button>
+                    <a class="btn btn-warning" [routerLink]="['/dashboard/abonados']"  >Regresar</a>
+                </div>
+          </div> 
+          </form>
+
+        </div>
+    </section>
+  </div>

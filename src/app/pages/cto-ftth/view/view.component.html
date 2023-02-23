@@ -1,0 +1,374 @@
+<div class="container-fluid ">
+    <div class="row ml-4 mt-4 border-bottom mb-5">
+      <div class="col col-lg-3">
+        <img class="img-fluid p-3" src="../../../../assets/img/01.png" alt="" />
+        
+        <div class="ribbon-wrapper ribbon-xl">
+          <div class="ribbon bg-success">{{cto.central}}</div>
+        </div>
+      </div>
+  
+      <div class="col-12 col-lg-9">
+        <div class="callout callout-info">
+          <form>
+            <div class="card-body">
+              <div class="row">
+                <div class="form-group col-sm-2 col-xl-1">
+                  <label for="exampleInputEmail1">Caja</label>
+                  <input
+                    disabled
+                    type="number"
+                    class="form-control"
+                    id="exampleInputEmail1"
+                    placeholder="{{cto.caja}}"
+                  />
+                </div>
+                <div class="form-group col-sm-2 col-xl-1">
+                  <label for="exampleInputEmail1">Pon</label>
+                  <input
+                    disabled
+                    type="number"
+                    class="form-control"
+                    id="exampleInputEmail1"
+                    placeholder="{{cto.pon}}"
+                  />
+                </div>
+                <div class="form-group col-sm-2 col-xl-1">
+                  <label for="exampleInputEmail1">Pelo</label>
+                  <input
+                    disabled
+                    type="number"
+                    class="form-control"
+                    id="exampleInputEmail1"
+                    placeholder="{{cto.pelo}}"
+                  />
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-lg-4">
+                  <label for="exampleInputEmail1">Calle</label>
+                  <input
+                    disabled
+                    type="text"
+                    class="form-control"
+                    id="exampleInputEmail1"
+                    placeholder="{{cto.calle}}"
+                  />
+                </div>
+                
+              </div>
+              <div class="row">
+                <div class="form-group col-lg-2">
+                  <label for="exampleInputEmail1">EntreCalle 1</label>
+                  <input
+                    disabled
+                    type="text"
+                    class="form-control"
+                    id="exampleInputEmail1"
+                    placeholder="{{cto.entrecalle1}}"
+                  />
+                </div>
+                <div class="form-group col-lg-2">
+                  <label for="exampleInputEmail1">EntreCalle 2</label>
+                  <input
+                    disabled
+                    type="text"
+                    class="form-control"
+                    id="exampleInputEmail1"
+                    placeholder="{{cto.entrecalle2}}"
+                  />
+                </div>
+              </div>
+            </div>
+  
+            <div class="card-footer">
+              <!-- <button type="submit" class="btn btn-primary mr-3">Guardar</button> -->
+              <button
+                class="btn btn-warning"
+                [routerLink]="['/dashboard/cto-ftth']"
+              >
+                Regresar
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row justify-content-around pt-5 mt-4">
+      <div class="col-2">
+          <div id="accordion">
+              <div class="card card-primary">
+              <div class="card-header">
+              <h4 class="card-title w-100">
+              <a class="d-block w-100 collapsed d-flex justify-content-center" data-toggle="collapse" href="#puerto1" aria-expanded="false">
+              {{cto.puerto1}} Puerto 1
+              </a>
+              </h4>
+              </div>
+              <div id="puerto1" class="collapse" data-parent="#accordion" >
+              <div class="card-body">
+              Datos del abonado en puerto 1
+              </div>
+              </div>
+              </div>
+              <div class="card card-primary">
+              <div class="card-header">
+              <h4 class="card-title w-100">
+              <a class="d-block w-100 d-flex justify-content-center" data-toggle="collapse" href="#puerto5">
+                {{cto.puerto5}} Puerto 5
+              </a>
+              </h4>
+              </div>
+              <div id="puerto5" class="collapse" data-parent="#accordion">
+              <div class="card-body">
+              Datos del abonado en puerto 5
+              <button
+                      type="button"
+                      alt="editar"
+                      [routerLink]="['/dashboard/cto-ftth', cto._id]"
+                      class="btn btn-lg btn-secondary-light mr-4"
+                    >
+                      <i class="fa fa-edit"></i>
+                    </button>
+              </div>
+              </div>
+              </div>
+              </div>
+      </div>
+      <div class="col-2">
+          <div id="accordion">
+              <div class="card card-primary">
+              <div class="card-header">
+              <h4 class="card-title w-100">
+              <a class="d-block w-100 collapsed d-flex justify-content-center" data-toggle="collapse" href="#puerto2" aria-expanded="false">
+                {{cto.puerto2}} Puerto 2
+              </a>
+              </h4>
+              </div>
+              <div id="puerto2" class="collapse" data-parent="#accordion" >
+              <div class="card-body">
+              Datos del abonado en puerto 2
+              </div>
+              </div>
+              </div>
+              <div class="card card-primary">
+              <div class="card-header">
+              <h4 class="card-title w-100">
+              <a class="d-block w-100 d-flex justify-content-center" data-toggle="collapse" href="#puerto6">
+                {{cto.puerto6}} Puerto 6
+              </a>
+              </h4>
+              </div>
+              <div id="puerto6" class="collapse" data-parent="#accordion">
+              <div class="card-body">
+              Datos del abonado en puerto 6
+              </div>
+              </div>
+              </div>
+              </div>
+      </div>
+      <div class="col-2">
+          <div id="accordion">
+              <div class="card card-primary">
+              <div class="card-header">
+              <h4 class="card-title w-100">
+              <a class="d-block w-100 collapsed d-flex justify-content-center" data-toggle="collapse" href="#puerto3" aria-expanded="false">
+              {{cto.puerto3}} Puerto 3
+              </a>
+              </h4>
+              </div>
+              <div id="puerto3" class="collapse" data-parent="#accordion" >
+              <div class="card-body">
+             Datos del abonado en puerto 3
+              </div>
+              </div>
+              </div>
+              <div class="card card-primary">
+              <div class="card-header">
+              <h4 class="card-title w-100">
+              <a class="d-block w-100 d-flex justify-content-center" data-toggle="collapse" href="#puerto7">
+                {{cto.puerto7}} Puerto 7
+              </a>
+              </h4>
+              </div>
+              <div id="puerto7" class="collapse" data-parent="#accordion">
+              <div class="card-body">
+              Datos del abonado en puerto 7
+              </div>
+              </div>
+              </div>
+              </div>
+      </div>
+      <div class="col-2">
+          <div id="accordion">
+              <div class="card card-primary">
+              <div class="card-header">
+              <h4 class="card-title w-100">
+              <a class="d-block w-100 collapsed d-flex justify-content-center" data-toggle="collapse" href="#puerto4" aria-expanded="false">
+                {{cto.puerto4}} Puerto 4
+              </a>
+              </h4>
+              </div>
+              <div id="puerto4" class="collapse" data-parent="#accordion" style="">
+              <div class="card-body">
+              Datos del abonado en puerto 4
+              </div>
+              </div>
+              </div>
+              <div class="card card-primary">
+              <div class="card-header">
+              <h4 class="card-title w-100">
+              <a class="d-block w-100 d-flex justify-content-center" data-toggle="collapse" href="#puerto8">
+                {{cto.puerto8}} Puerto 8
+              </a>
+              </h4>
+              </div>
+              <div id="puerto8" class="collapse" data-parent="#accordion">
+              <div class="card-body">
+              Datos del abonado en puerto 8
+              </div>
+              </div>
+              </div>
+              </div>
+      </div>
+    </div>
+    <div class="row justify-content-around" *ngIf="cto.cantpuertos == 16">
+      <div class="col-2">
+          <div id="accordion">
+              <div class="card card-primary">
+              <div class="card-header">
+              <h4 class="card-title w-100">
+              <a class="d-block w-100 collapsed d-flex justify-content-center" data-toggle="collapse" href="#puerto9" aria-expanded="false">
+                {{cto.puerto9}} Puerto 9
+              </a>
+              </h4>
+              </div>
+              <div id="puerto9" class="collapse" data-parent="#accordion" >
+              <div class="card-body">
+              Datos del abonado en puerto 9
+              </div>
+              </div>
+              </div>
+              <div class="card card-primary">
+              <div class="card-header">
+              <h4 class="card-title w-100">
+              <a class="d-block w-100 d-flex justify-content-center" data-toggle="collapse" href="#puerto13">
+                {{cto.puerto13}} Puerto 13
+              </a>
+              </h4>
+              </div>
+              <div id="puerto13" class="collapse" data-parent="#accordion">
+              <div class="card-body">
+              Datos del abonado en puerto 13
+              <button
+                      type="button"
+                      alt="editar"
+                      [routerLink]="['/dashboard/cto-ftth', cto._id]"
+                      class="btn btn-lg btn-secondary-light mr-4"
+                    >
+                      <i class="fa fa-edit"></i>
+                    </button>
+              </div>
+              </div>
+              </div>
+              </div>
+      </div>
+      <div class="col-2">
+          <div id="accordion">
+              <div class="card card-primary">
+              <div class="card-header">
+              <h4 class="card-title w-100">
+              <a class="d-block w-100 collapsed d-flex justify-content-center" data-toggle="collapse" href="#puerto10" aria-expanded="false">
+                {{cto.puerto10}} Puerto 10
+              </a>
+              </h4>
+              </div>
+              <div id="puerto10" class="collapse" data-parent="#accordion" >
+              <div class="card-body">
+              Datos del abonado en puerto 10
+              </div>
+              </div>
+              </div>
+              <div class="card card-primary">
+              <div class="card-header">
+              <h4 class="card-title w-100">
+              <a class="d-block w-100 d-flex justify-content-center" data-toggle="collapse" href="#puerto14">
+                {{cto.puerto14}} Puerto 14
+              </a>
+              </h4>
+              </div>
+              <div id="puerto14" class="collapse" data-parent="#accordion">
+              <div class="card-body">
+              Datos del abonado en el puerto 14
+              </div>
+              </div>
+              </div>
+              </div>
+      </div>
+      <div class="col-2">
+          <div id="accordion">
+              <div class="card card-primary">
+              <div class="card-header">
+              <h4 class="card-title w-100">
+              <a class="d-block w-100 collapsed d-flex justify-content-center" data-toggle="collapse" href="#puerto11" aria-expanded="false">
+                {{cto.puerto11}} Puerto 11
+              </a>
+              </h4>
+              </div>
+              <div id="puerto11" class="collapse" data-parent="#accordion" >
+              <div class="card-body">
+              Datos del abonado en puerto 11
+              </div>
+              </div>
+              </div>
+              <div class="card card-primary">
+              <div class="card-header">
+              <h4 class="card-title w-100">
+              <a class="d-block w-100 d-flex justify-content-center" data-toggle="collapse" href="#puerto15">
+                {{cto.puerto15}} Puerto 15
+              </a>
+              </h4>
+              </div>
+              <div id="puerto15" class="collapse" data-parent="#accordion">
+              <div class="card-body">
+              Datos del abonado en el puerto 15
+              </div>
+              </div>
+              </div>
+              </div>
+      </div>
+      <div class="col-2">
+          <div id="accordion">
+              <div class="card card-primary ">
+              <div class="card-header ">
+              <h4 class="card-title w-100">
+              <a class="d-block w-100 collapsed d-flex justify-content-center" data-toggle="collapse" href="#puerto12" aria-expanded="false">
+                {{cto.puerto12}} Puerto 12
+              </a>
+              </h4>
+              </div>
+              <div id="puerto12" class="collapse" data-parent="#accordion">
+              <div class="card-body">
+              Datos del abonado en el puerto 12
+              </div>
+              </div>
+              </div>
+              <div class="card card-primary">
+              <div class="card-header">
+              <h4 class="card-title w-100">
+              <a class="d-block w-100 d-flex justify-content-center" data-toggle="collapse" href="#puerto16">
+                {{cto.puerto16}} Puerto 16
+              </a>
+              </h4>
+              </div>
+              <div id="puerto16" class="collapse" data-parent="#accordion">
+              <div class="card-body">
+              Datos del abonado en el puerto 16
+              </div>
+              </div>
+              </div>
+              </div>
+      </div>
+    </div>
+  </div>

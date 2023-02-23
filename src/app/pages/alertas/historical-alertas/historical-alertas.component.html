@@ -1,0 +1,74 @@
+<!-- Historico de alertas -->
+<div class="container-fluid">
+    <section class="row">
+        <div class="col ml-4 mr-4">
+
+          <!-- Page title-->
+          <div class="border-bottom pt-5 mb-5">
+            <h1 class="mt-2 mt-md-4 mb-3">Historico de Alertas</h1>
+            <div class="d-flex flex-wrap flex-md-nowrap justify-content-between">
+              <p class="text-muted">Este módulo lista todas las alertas</p>
+            </div>
+          </div>
+
+          <div class="card box-shadow-sm">
+                <div class="card-header">
+                    <h5 style="margin-bottom: 0px;">Filtro de Alertas</h5>
+                </div>
+                <div class="card-header">
+                    <form class="form-inline pt-2">
+                        <button class="btn btn-primary mb-3 mr-3" (click)="pendientes()" type="submit">Pendientes</button>
+                        <button class="btn btn-primary mb-3" (click)="reload()" type="submit">Todas</button>
+                    </form>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                          <thead class="thead-dark text-center">
+                          <tr>
+                              <th>Tipo</th>
+                              <th>Titulo</th>
+                              <th>Descripcion</th>
+                              <th>Solucion</th>
+                              <th>Fecha Inicio</th>
+                              <th>Fecha Cierre</th>
+                          </tr>
+                    
+                        </thead>
+                      <tbody *ngIf="load_data"   >
+                        <tr>
+                          <td class="text-center" colspan="5">
+                            <div class="spinner-border text-light" role="status">
+                              <span class="visually-hidden"></span>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                      <ng-container *ngIf="!load_data">
+                        <tbody *ngFor="let item of alertas_data | slice: (page-1)*pageSize : (page-1) * pageSize + pageSize " class="text-center" >
+                          <tr>
+                           <td>{{item.tipo}}</td>
+                           <td>{{item.titulo}}</td>
+                           <td>{{item.descripcion}}</td>
+                           <td>{{item.solucion}}</td>
+                           <td>{{item.fecha_inicio}}</td>
+                           <td>{{item.fecha_cierre}}</td>
+                          </tr>
+                     </tbody>
+                      </ng-container>
+                        </table>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <ngb-pagination
+                      [(page)]="page"
+                      [pageSize]="pageSize"
+                      [collectionSize]="alertas_data.length"
+                    > 
+                    </ngb-pagination>
+                </div>
+          </div>    
+        </div>
+      </section>
+</div>
+  <!-- /Historico de alertas -->

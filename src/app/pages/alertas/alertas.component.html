@@ -1,0 +1,77 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <div class="container">
+                <section class="row">
+                  <div class="col col-xl-12 ml-4 mr-4">
+                    <!-- Page title-->
+                    <div class="border-bottom mb-5">
+                      <h1 class="mt-2 mt-md-4 mb-3 pt-5">Alertas</h1>
+                      <div class="d-flex flex-wrap flex-md-nowrap justify-content-between">
+                        <p class="text-muted pb-1">
+                          Este módulo finaliza alertas del sistema.
+                        </p>
+                      </div>
+                    </div>
+                    <form #finishForm="ngForm" (ngSubmit)="finalizar(finishForm)">
+                    
+                      <div class="card box-shadow-sm">
+                        <div class="card-header text-center">
+                          <h5 style="margin-bottom: 0px">Finalizacion de Alerta {{alerta.titulo}}</h5>
+                        </div>
+                        <div class="card-body">
+                          <div class="row d-flex justify-content-around text-center">
+
+                            <div class="col-md-4 form-group">
+                              <label for="validationCustom01" class="form-label"
+                                >Descripcion</label
+                              >
+                              <input
+                                class="form-control"
+                                disabled=""
+                                type="text-area"
+                                  rows="2"
+                                placeholder="Titulo de la alerta"
+                                name="descripcion"
+                                [(ngModel)]="alerta.descripcion"
+                                required
+                              />
+                            </div>
+                          <div class="col-md-12 form-group">
+                                <label for="validationCustom01" class="form-label"
+                                  >Solucion</label
+                                >
+                                <textarea
+                                  class="form-control"
+                                  type="text-area"
+                                  rows="3"
+                                  placeholder="resolucion de alerta"
+                                  name="solucion"
+                                  [(ngModel)]="alerta.solucion"
+                                  required
+                                >
+                                </textarea>
+                              </div>
+                              
+                           
+              
+                          </div>
+                        </div>
+                        <div class="card-footer">
+                          <button class="btn btn-primary mr-3">Finalizar Alerta</button>
+                          <button
+                            class="btn btn-warning"
+                            [routerLink]="['/dashboard']"
+                          >
+                            Regresar
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </section>
+              </div>
+              
+        </div>
+    </div>
+</div>

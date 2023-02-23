@@ -1,0 +1,573 @@
+<app-breadcrumbs></app-breadcrumbs>
+
+<!-- Main content -->
+<section class="content">
+  <div class="container-fluid">
+    <!-- container-fluid -->
+    <!-- Info boxes -->
+    <div class="row">
+      <div class="col-12 col-sm-6 col-md-3">
+        <h2>Telefonia</h2>
+        <div class="info-box">
+          <span class="info-box-icon bg-info elevation-1"
+            ><i class="fas fa-phone"></i
+          ></span>
+          <div class="info-box-content">
+            <span class="info-box-text">Reparaciones</span>
+            <span class="info-box-number"> 10 </span>
+          </div>
+          <div class="info-box-content">
+            <span class="info-box-text">Instalaciones</span>
+            <span class="info-box-number"> 10 </span>
+          </div>
+          <div class="info-box-content">
+            <span class="info-box-text">Otros</span>
+            <span class="info-box-number"> 10 </span>
+          </div>
+          <!-- /.info-box-content -->
+        </div>
+
+        <!-- /.info-box -->
+      </div>
+      <!-- /.col -->
+      <div class="col-12 col-sm-6 col-md-3">
+        <h2>Internet</h2>
+        <div class="info-box mb-3">
+          <span class="info-box-icon bg-danger elevation-1"
+            ><i class="fas fa fa-wifi"></i
+          ></span>
+
+          <div class="info-box-content">
+            <span class="info-box-text">Reparaciones</span>
+            <span class="info-box-number">41,410</span>
+          </div>
+          <div class="info-box-content">
+            <span class="info-box-text">Instalaciones</span>
+            <span class="info-box-number">41,410</span>
+          </div>
+          <div class="info-box-content">
+            <span class="info-box-text">Otros</span>
+            <span class="info-box-number">41,410</span>
+          </div>
+          <!-- /.info-box-content -->
+        </div>
+
+        <!-- /.info-box -->
+      </div>
+      <!-- /.col -->
+
+      <!-- fix for small devices only -->
+      <div class="clearfix hidden-md-up"></div>
+
+      <div class="col-12 col-sm-6 col-md-3">
+        <h2>Fibra Optica</h2>
+        <div class="info-box mb-3">
+          <span class="info-box-icon bg-success elevation-1"
+            ><i class="fas fa-laptop-house"></i
+          ></span>
+
+          <div class="info-box-content">
+            <span class="info-box-text">Reparaciones</span>
+            <span class="info-box-number">760</span>
+          </div>
+          <div class="info-box-content">
+            <span class="info-box-text">Instalaciones</span>
+            <span class="info-box-number">760</span>
+          </div>
+          <div class="info-box-content">
+            <span class="info-box-text">Otros</span>
+            <span class="info-box-number">760</span>
+          </div>
+          <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+      </div>
+      <!-- /.col -->
+      <div class="col-12 col-sm-6 col-md-3">
+        <h2>Alarma</h2>
+        <div class="info-box mb-3">
+          <span class="info-box-icon bg-warning elevation-1"
+            ><i class="fas fa-exclamation-triangle"></i
+          ></span>
+
+          <div class="info-box-content">
+            <span class="info-box-text">Reparaciones</span>
+            <span class="info-box-number">2,000</span>
+          </div>
+          <div class="info-box-content">
+            <span class="info-box-text">Instalaciones</span>
+            <span class="info-box-number">2,000</span>
+          </div>
+          <div class="info-box-content">
+            <span class="info-box-text">Otros</span>
+            <span class="info-box-number">2,000</span>
+          </div>
+          <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+      </div>
+      <!-- /.col -->
+    </div>
+    <!-- /Info boxes -->
+
+    <!-- ALERTAS -->
+    <ng-container *ngIf="alertas.length != 0">
+      <div class="row">
+        <div class="col">
+          <div class="card card-default">
+            <button
+              type="button"
+              class="btn bg-info btn-sm"
+              data-card-widget="collapse"
+            >
+              <i class="fas fa-exclamation-triangle"></i>
+            </button>
+
+            <div class="card-body">
+              <div
+                class="alert alert-{{ item.tipo }} alert-dismissible"
+                *ngFor="let item of alertas"
+              >
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="alert"
+                  aria-hidden="true"
+                >
+                  ×
+                </button>
+                <div class="row justify-content-between">
+                  <div class="col">
+                    <h5><i class="icon fas fa-ban"></i> {{ item.titulo }}</h5>
+                    <hr />
+                  </div>
+                  <div class="col-4 d-flex justify-content-end">
+                    <button
+                      type="button"
+                      alt="editar"
+                      [routerLink]="['/dashboard/alertas', item._id]"
+                      class="btn btn-lg btn-secondary-light mr-4"
+                    >
+                      <i class="fa fa-edit"></i>
+                    </button>
+                    <button
+                      type="button"
+                      alt="editar"
+                      [routerLink]="['/dashboard/alertas/finalizar/', item._id]"
+                      class="btn btn-lg btn-secondary-lightml-2"
+                    >
+                      <i class="fas fa-check-circle"></i>
+                    </button>
+                  </div>
+                </div>
+                <p>{{ item.descripcion }}</p>
+                <hr />
+                <div class="row">
+                  <div class="col">{{ item.fecha_inicio }}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+
+    <!-- / ALERTAS -->
+
+    <!-- GRAFICO y TAREAS -->
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card card-primary card-outline">
+          <div class="card-header">
+            <h3 class="card-title">
+              <i class="far fa-chart-bar"></i>
+              Interactive Area Chart
+            </h3>
+            <div class="card-tools">
+              Real time
+              <div class="btn-group" id="realtime" data-toggle="btn-toggle">
+                <button
+                  type="button"
+                  class="btn btn-default btn-sm active"
+                  data-toggle="on"
+                >
+                  On
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-default btn-sm"
+                  data-toggle="off"
+                >
+                  Off
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div
+              id="interactive"
+              style="height: 300px; padding: 0px; position: relative"
+            >
+              <canvas
+                class="flot-base"
+                width="1054"
+                height="300"
+                style="
+                  direction: ltr;
+                  position: absolute;
+                  left: 0px;
+                  top: 0px;
+                  width: 1054px;
+                  height: 300px;
+                "
+              ></canvas
+              ><canvas
+                class="flot-overlay"
+                width="1054"
+                height="300"
+                style="
+                  direction: ltr;
+                  position: absolute;
+                  left: 0px;
+                  top: 0px;
+                  width: 1054px;
+                  height: 300px;
+                "
+              ></canvas>
+              <div
+                class="flot-svg"
+                style="
+                  position: absolute;
+                  top: 0px;
+                  left: 0px;
+                  height: 100%;
+                  width: 100%;
+                  pointer-events: none;
+                "
+              >
+                <svg style="width: 100%; height: 100%">
+                  <g
+                    class="flot-x-axis flot-x1-axis xAxis x1Axis"
+                    style="position: absolute; inset: 0px"
+                  >
+                    <text
+                      x="28"
+                      y="294"
+                      class="flot-tick-label tickLabel"
+                      style="position: absolute; text-align: center"
+                    >
+                      0
+                    </text>
+                    <text
+                      x="126.44816820549244"
+                      y="294"
+                      class="flot-tick-label tickLabel"
+                      style="position: absolute; text-align: center"
+                    >
+                      10
+                    </text>
+                    <text
+                      x="228.87241062973484"
+                      y="294"
+                      class="flot-tick-label tickLabel"
+                      style="position: absolute; text-align: center"
+                    >
+                      20
+                    </text>
+                    <text
+                      x="331.29665305397725"
+                      y="294"
+                      class="flot-tick-label tickLabel"
+                      style="position: absolute; text-align: center"
+                    >
+                      30
+                    </text>
+                    <text
+                      x="433.7208954782197"
+                      y="294"
+                      class="flot-tick-label tickLabel"
+                      style="position: absolute; text-align: center"
+                    >
+                      40
+                    </text>
+                    <text
+                      x="536.1451379024621"
+                      y="294"
+                      class="flot-tick-label tickLabel"
+                      style="position: absolute; text-align: center"
+                    >
+                      50
+                    </text>
+                    <text
+                      x="638.5693803267045"
+                      y="294"
+                      class="flot-tick-label tickLabel"
+                      style="position: absolute; text-align: center"
+                    >
+                      60
+                    </text>
+                    <text
+                      x="740.993622750947"
+                      y="294"
+                      class="flot-tick-label tickLabel"
+                      style="position: absolute; text-align: center"
+                    >
+                      70
+                    </text>
+                    <text
+                      x="843.4178651751894"
+                      y="294"
+                      class="flot-tick-label tickLabel"
+                      style="position: absolute; text-align: center"
+                    >
+                      80
+                    </text>
+                    <text
+                      x="945.8421075994318"
+                      y="294"
+                      class="flot-tick-label tickLabel"
+                      style="position: absolute; text-align: center"
+                    >
+                      90
+                    </text>
+                  </g>
+                  <g
+                    class="flot-y-axis flot-y1-axis yAxis y1Axis"
+                    style="position: absolute; inset: 0px"
+                  >
+                    <text
+                      x="8.9521484375"
+                      y="269"
+                      class="flot-tick-label tickLabel"
+                      style="position: absolute; text-align: right"
+                    >
+                      0
+                    </text>
+                    <text
+                      x="1"
+                      y="218.2"
+                      class="flot-tick-label tickLabel"
+                      style="position: absolute; text-align: right"
+                    >
+                      20
+                    </text>
+                    <text
+                      x="1"
+                      y="167.4"
+                      class="flot-tick-label tickLabel"
+                      style="position: absolute; text-align: right"
+                    >
+                      40
+                    </text>
+                    <text
+                      x="1"
+                      y="116.6"
+                      class="flot-tick-label tickLabel"
+                      style="position: absolute; text-align: right"
+                    >
+                      60
+                    </text>
+                    <text
+                      x="1"
+                      y="65.8"
+                      class="flot-tick-label tickLabel"
+                      style="position: absolute; text-align: right"
+                    >
+                      80
+                    </text>
+                    <text
+                      x="-6.9521484375"
+                      y="15"
+                      class="flot-tick-label tickLabel"
+                      style="position: absolute; text-align: right"
+                    >
+                      100
+                    </text>
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Tareas -->
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header ui-sortable-handle" style="cursor: move">
+            <h3 class="card-title">
+              <i class="ion ion-clipboard mr-1"></i>
+              To Do List
+            </h3>
+            <div class="card-tools">
+              <ul class="pagination pagination-sm">
+                <li class="page-item"><a href="#" class="page-link">«</a></li>
+                <li class="page-item"><a href="#" class="page-link">1</a></li>
+                <li class="page-item"><a href="#" class="page-link">2</a></li>
+                <li class="page-item"><a href="#" class="page-link">3</a></li>
+                <li class="page-item"><a href="#" class="page-link">»</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card-body">
+            <ul class="todo-list ui-sortable" data-widget="todo-list">
+              <li>
+                <span class="handle ui-sortable-handle">
+                  <i class="fas fa-ellipsis-v"></i>
+                  <i class="fas fa-ellipsis-v"></i>
+                </span>
+
+                <div class="icheck-primary d-inline ml-2">
+                  <input
+                    type="checkbox"
+                    value=""
+                    name="todo1"
+                    id="todoCheck1"
+                  />
+                  <label for="todoCheck1"></label>
+                </div>
+
+                <span class="text">Design a nice theme</span>
+
+                <small class="badge badge-danger"
+                  ><i class="far fa-clock"></i> 2 mins</small
+                >
+
+                <div class="tools">
+                  <i class="fas fa-edit"></i>
+                  <i class="fas fa-trash-o"></i>
+                </div>
+              </li>
+              <li class="done">
+                <span class="handle ui-sortable-handle">
+                  <i class="fas fa-ellipsis-v"></i>
+                  <i class="fas fa-ellipsis-v"></i>
+                </span>
+                <div class="icheck-primary d-inline ml-2">
+                  <input
+                    type="checkbox"
+                    value=""
+                    name="todo2"
+                    id="todoCheck2"
+                    checked=""
+                  />
+                  <label for="todoCheck2"></label>
+                </div>
+                <span class="text">Make the theme responsive</span>
+                <small class="badge badge-info"
+                  ><i class="far fa-clock"></i> 4 hours</small
+                >
+                <div class="tools">
+                  <i class="fas fa-edit"></i>
+                  <i class="fas fa-trash-o"></i>
+                </div>
+              </li>
+              <li>
+                <span class="handle ui-sortable-handle">
+                  <i class="fas fa-ellipsis-v"></i>
+                  <i class="fas fa-ellipsis-v"></i>
+                </span>
+                <div class="icheck-primary d-inline ml-2">
+                  <input
+                    type="checkbox"
+                    value=""
+                    name="todo3"
+                    id="todoCheck3"
+                  />
+                  <label for="todoCheck3"></label>
+                </div>
+                <span class="text">Let theme shine like a star</span>
+                <small class="badge badge-warning"
+                  ><i class="far fa-clock"></i> 1 day</small
+                >
+                <div class="tools">
+                  <i class="fas fa-edit"></i>
+                  <i class="fas fa-trash-o"></i>
+                </div>
+              </li>
+              <li>
+                <span class="handle ui-sortable-handle">
+                  <i class="fas fa-ellipsis-v"></i>
+                  <i class="fas fa-ellipsis-v"></i>
+                </span>
+                <div class="icheck-primary d-inline ml-2">
+                  <input
+                    type="checkbox"
+                    value=""
+                    name="todo4"
+                    id="todoCheck4"
+                  />
+                  <label for="todoCheck4"></label>
+                </div>
+                <span class="text">Let theme shine like a star</span>
+                <small class="badge badge-success"
+                  ><i class="far fa-clock"></i> 3 days</small
+                >
+                <div class="tools">
+                  <i class="fas fa-edit"></i>
+                  <i class="fas fa-trash-o"></i>
+                </div>
+              </li>
+              <li>
+                <span class="handle ui-sortable-handle">
+                  <i class="fas fa-ellipsis-v"></i>
+                  <i class="fas fa-ellipsis-v"></i>
+                </span>
+                <div class="icheck-primary d-inline ml-2">
+                  <input
+                    type="checkbox"
+                    value=""
+                    name="todo5"
+                    id="todoCheck5"
+                  />
+                  <label for="todoCheck5"></label>
+                </div>
+                <span class="text">Check your messages and notifications</span>
+                <small class="badge badge-primary"
+                  ><i class="far fa-clock"></i> 1 week</small
+                >
+                <div class="tools">
+                  <i class="fas fa-edit"></i>
+                  <i class="fas fa-trash-o"></i>
+                </div>
+              </li>
+              <li>
+                <span class="handle ui-sortable-handle">
+                  <i class="fas fa-ellipsis-v"></i>
+                  <i class="fas fa-ellipsis-v"></i>
+                </span>
+                <div class="icheck-primary d-inline ml-2">
+                  <input
+                    type="checkbox"
+                    value=""
+                    name="todo6"
+                    id="todoCheck6"
+                  />
+                  <label for="todoCheck6"></label>
+                </div>
+                <span class="text">Let theme shine like a star</span>
+                <small class="badge badge-secondary"
+                  ><i class="far fa-clock"></i> 1 month</small
+                >
+                <div class="tools">
+                  <i class="fas fa-edit"></i>
+                  <i class="fas fa-trash-o"></i>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="card-footer clearfix">
+            <button type="button" class="btn btn-primary float-right">
+              <i class="fas fa-plus"></i> Add item
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- /Tareas -->
+    </div>
+    <!-- /GRAFICO Y TAREAS -->
+  </div>
+  <!-- /container-fluid -->
+</section>
+<!-- /.content -->

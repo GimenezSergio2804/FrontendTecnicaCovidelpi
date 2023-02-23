@@ -1,0 +1,90 @@
+<div class="container-fluid">
+  <section class="row">
+      <div class="col ml-4 mr-4">
+        <div class="border-bottom pt-5 mb-5">
+          <h1 class="mb-3 pt-2">Cto-Ftth</h1>
+          <div class="d-flex flex-wrap flex-md-nowrap justify-content-between">
+            <p class="text-muted">Este módulo crea las cto-ftth del Sistema.</p>
+            
+          </div>
+        </div>
+
+        
+        <form #updateForm="ngForm" (ngSubmit)="actualizar(updateForm)" >
+          <div class="card box-shadow-sm">
+              <div class="card-header">
+                  <h5 style="margin-bottom: 0px;">Registro de CTO</h5>
+              </div>
+              <div class="card-body">
+                    <div class="row">
+                      <div class="col-lg-12">
+                          <div class="row">
+                            <div class="col-lg-4 form-group">	
+                                <label for="">Caja</label>
+                                <input type="number" class="form-control" name="caja" [(ngModel)]="cto.caja" placeholder="numero de caja" required>
+                            </div>
+                            <div class="col-lg-4 form-group">	
+                                <label for="">Pon</label>
+                                <input type="number" class="form-control" name="pon" [(ngModel)]="cto.pon" placeholder="Precio" required>
+                            </div>
+                            <div class="col-lg-4 form-group">	
+                              <label for="">Pelo</label>
+                              <input type="number" class="form-control" name="pelo" [(ngModel)]="cto.pelo" placeholder="Precio" required>
+                          </div>
+                            <div class="col-lg-4 form-group">	
+                                <label for="">Central</label>
+                                <select name="central" [(ngModel)]="cto.central" class="form-control custom-select" id="select-input" required>
+                                  <option value="" selected disabled>Seleccionar</option>
+                                  <option *ngFor="let item of centrales" value="{{item.identificador}}">{{item.identificador}}</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-4 form-group">	
+                              <label for="">Cantidad de puertos</label>
+                              <select name="cantpuertos" [(ngModel)]="cto.cantpuertos" class="form-control custom-select" id="select-input">
+                                <option value="" selected disabled>Seleccionar</option>
+                                <option value="8">8 Puertos</option>
+                                <option value="16">16 Puertos</option>
+                              </select>
+                          </div>
+                          <div class="col-lg-4 form-group">	
+                              <label for="">Coordenadas</label>
+                              <input name="coordenadas" [(ngModel)]="cto.coordenadas" type="text" class="form-control" placeholder="Coordenadas">
+                          </div>
+                          <div class="col-lg-4 form-group">	
+                              <label for="">Calle</label>
+                              <select name="calle" [(ngModel)]="cto.calle" class="form-control custom-select" id="select-input">
+                                <option value="" selected disabled>Seleccionar</option>
+                                <option *ngFor="let item of calles" value="{{item.nombre}}">{{item.nombre}}</option>
+
+                              </select>
+                          </div>
+                          <div class="col-lg-4 form-group">	
+                              <label for="">Entrecalle 1</label>
+                              <select name="entrecalle1" [(ngModel)]="cto.entrecalle1" class="form-control custom-select" id="select-input">
+                                <option value="" selected disabled>Seleccionar</option>
+                                <option *ngFor="let item of calles" value="{{item.nombre}}">{{item.nombre}}</option>
+                              </select>
+                          </div>
+                          <div class="col-lg-4 form-group">	
+                              <label for="">Entrecalle 2</label>
+                              <select name="entrecalle2" [(ngModel)]="cto.entrecalle2" class="form-control custom-select" id="select-input">
+                                <option value="" selected disabled>Seleccionar</option>
+                                <option *ngFor="let item of calles" value="{{item.nombre}}">{{item.nombre}}</option>
+                              </select>
+                          </div>
+
+
+                          </div>
+                      </div>
+                    </div>
+              </div>
+              <div class="card-footer">
+                  <button class="btn btn-primary mr-2" type="submit">Actualizar CTO</button>
+                  <a class="btn btn-warning" [routerLink]="['/dashboard/cto-ftth']"  >Regresar</a>
+              </div>
+        </div> 
+        </form>
+
+      </div>
+  </section>
+</div>
